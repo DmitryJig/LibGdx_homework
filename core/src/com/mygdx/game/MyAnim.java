@@ -4,6 +4,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+/**
+ *  Класс анимации
+ */
 public class MyAnim {
 
     private Texture img;
@@ -18,14 +21,14 @@ public class MyAnim {
         img = new Texture(name);
         TextureRegion reg1 = new TextureRegion(img);
         TextureRegion[][] regions = reg1.split(img.getWidth() / col, img.getHeight() / row);
-        TextureRegion[] lineRegions = new TextureRegion[col*row];
+        TextureRegion[] lineRegions = new TextureRegion[col * row];
         int cnt = 0;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 lineRegions[cnt++] = regions[i][j];
             }
         }
-        anm = new Animation<>(1/fps, lineRegions);
+        anm = new Animation<>(1 / fps, lineRegions);
         anm.setPlayMode(playMode);
     }
 
@@ -34,10 +37,10 @@ public class MyAnim {
     }
 
     public void setTime(float dt) {
-        time +=dt;
+        time += dt;
     }
 
-    public void dispose(){
+    public void dispose() {
         this.img.dispose();
     }
 }

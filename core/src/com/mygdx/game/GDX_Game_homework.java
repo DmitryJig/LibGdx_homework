@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+/**
+ * Класс игры
+ */
 public class GDX_Game_homework extends ApplicationAdapter {
     private SpriteBatch batch;
     private MyAnim coinAnim;
@@ -27,7 +30,7 @@ public class GDX_Game_homework extends ApplicationAdapter {
         catAnim.setTime(Gdx.graphics.getDeltaTime());
 
         float x = Gdx.input.getX() - catAnim.draw().getRegionWidth() / 2;
-        float y = Gdx.graphics.getHeight() - (Gdx.input.getY() + catAnim.draw().getRegionHeight()/2);
+        float y = Gdx.graphics.getHeight() - (Gdx.input.getY() + catAnim.draw().getRegionHeight() / 2);
 
         batch.begin();
         batch.draw(coinAnim.draw(), 0, 0);
