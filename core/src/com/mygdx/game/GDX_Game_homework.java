@@ -51,6 +51,10 @@ public class GDX_Game_homework extends ApplicationAdapter {
 //        float x = Gdx.input.getX() - catAnim.draw().getRegionWidth() / 2;
 //        float y = Gdx.graphics.getHeight() - (Gdx.input.getY() + catAnim.draw().getRegionHeight() / 2);
 
+        if (Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)){
+            sound.stop();
+            sound.play();
+        }
         if (myInputProcessor.isLeftPressed()) {
             dir = -1;
             tmpA = walk;
